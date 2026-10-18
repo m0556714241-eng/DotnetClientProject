@@ -1,0 +1,51 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.skip {
+  position: absolute;
+  inset-inline-start: var(--sp-4);
+  top: -60px;
+  z-index: 100;
+  background: var(--gold);
+  color: var(--navy-900);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.skip:focus {
+  top: var(--sp-3);
+}
+
+.footer {
+  background: var(--navy-900);
+  color: rgba(247, 243, 234, 0.7);
+  margin-top: var(--sp-8);
+  border-top: 3px solid var(--gold);
+}
+
+.footerInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-5);
+  padding-block: var(--sp-6);
+}
+
+.footerText {
+  flex: 1;
+  min-width: 220px;
+  font-size: var(--fs-sm);
+}
+
+.copy {
+  font-size: var(--fs-xs);
+  direction: ltr;
+}

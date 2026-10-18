@@ -1,0 +1,80 @@
+/* SeatWise design tokens – the ONE place for colors, type, spacing and shadows */
+:root {
+  /* Brand */
+  --navy-900: #14243a;
+  --navy-800: #1c3048;
+  --navy-700: #2a4361;
+  --navy-500: #4f6683;
+  --ivory: #f7f3ea;
+  --ivory-deep: #efe8da;
+  --gold: #b8893b; /* deep gold – the accent */
+  --gold-dark: #8f6a2c; /* pressed state, gold text on light backgrounds */
+  --gold-bright: #d6b36c; /* gold text on navy backgrounds */
+  --gold-soft: #efe3cb;
+  --burgundy: #713b49;
+  --burgundy-soft: #f3e4e7;
+  --gray-200: #e8e5df;
+  --gray-300: #d9d5cd;
+  --gray-500: #8d8a84;
+  --gray-700: #55524c;
+  --white: #ffffff;
+
+  /* Semantic */
+  --text: #1b2433;
+  --text-muted: #5f6672;
+  --text-on-dark: #f7f3ea;
+  --surface: var(--white);
+  --surface-alt: var(--ivory);
+  --border: #e3ddd1;
+  --focus: #2f6fde;
+  --success: #2e7d5b;
+  --success-soft: #e3f2ea;
+  --danger: var(--burgundy);
+  --danger-soft: var(--burgundy-soft);
+  --warning: #9a6a12;
+  --warning-soft: #fbf0d9;
+
+  /* Seat states (price colors are computed per event – see utils/sectionColors.ts) */
+  --seat-booked: #c9c5bd;
+  --seat-booked-mark: #8f8b84;
+  --seat-selected: #ffffff;
+  --seat-selected-ring: #14243a;
+
+  /* Type */
+  --font-body: 'Rubik', 'Segoe UI', Arial, sans-serif;
+  --font-display: 'Rubik', 'Segoe UI', Arial, sans-serif;
+
+  --fs-xs: 0.78rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.15rem;
+  --fs-xl: 1.4rem;
+  --fs-2xl: 1.9rem;
+  --fs-3xl: clamp(2.2rem, 5vw, 3.6rem);
+
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 72px;
+
+  /* Shape */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --radius-btn: 10px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 36, 58, 0.06), 0 1px 3px rgba(20, 36, 58, 0.06);
+  --shadow: 0 6px 18px rgba(20, 36, 58, 0.08), 0 2px 6px rgba(20, 36, 58, 0.05);
+  --shadow-lg: 0 20px 48px rgba(20, 36, 58, 0.16);
+
+  --container: 1200px;
+  --header-h: 68px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

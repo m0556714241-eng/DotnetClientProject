@@ -1,0 +1,111 @@
+/* A straight stepper: equal segments, number + label on one line, a connecting line between them */
+.stepper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  max-width: 560px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-inline-end: var(--sp-4);
+  min-width: 0;
+}
+
+/* The line to the next step */
+.step:not(:last-child)::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  min-width: 16px;
+  background: var(--gray-300);
+  border-radius: 2px;
+}
+
+.done:not(:last-child)::after {
+  background: var(--gold);
+}
+
+.number {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  line-height: 1;
+  background: var(--white);
+  border: 2px solid var(--gray-300);
+  color: var(--gray-500);
+}
+
+.label {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.current .number {
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--gold-bright);
+}
+
+.current .label {
+  color: var(--navy-900);
+  font-weight: 700;
+}
+
+.done .number {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-900);
+}
+
+.done .label {
+  color: var(--navy-800);
+}
+
+/* On a navy background (the confirmation banner) */
+.onDark .label {
+  color: rgba(247, 243, 234, 0.65);
+}
+.onDark .current .label,
+.onDark .done .label {
+  color: var(--ivory);
+}
+.onDark .number {
+  background: transparent;
+  border-color: rgba(247, 243, 234, 0.3);
+  color: rgba(247, 243, 234, 0.6);
+}
+.onDark .current .number {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-900);
+}
+.onDark .step:not(:last-child)::after {
+  background: rgba(247, 243, 234, 0.2);
+}
+.onDark .done:not(:last-child)::after {
+  background: var(--gold);
+}
+
+@media (max-width: 480px) {
+  .label {
+    font-size: var(--fs-xs);
+  }
+  .step {
+    gap: 6px;
+    padding-inline-end: var(--sp-2);
+  }
+}

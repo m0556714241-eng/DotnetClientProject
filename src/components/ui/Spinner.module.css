@@ -1,0 +1,32 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2.5px solid currentColor;
+  border-inline-end-color: transparent;
+  animation: spin 0.8s linear infinite;
+  opacity: 0.85;
+}
+
+.label {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.page {
+  display: grid;
+  place-items: center;
+  min-height: 40vh;
+  color: var(--gold-dark);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

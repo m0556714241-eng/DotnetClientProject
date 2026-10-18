@@ -1,0 +1,240 @@
+.summary {
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-4));
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 6px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.mobileBar {
+  display: none;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--sp-5) var(--sp-5) var(--sp-3);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.title {
+  font-size: var(--fs-xl);
+}
+
+.counter {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  direction: ltr;
+}
+
+.body {
+  max-height: 46vh;
+  overflow-y: auto;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-2);
+  padding: var(--sp-6) var(--sp-5);
+  color: var(--text-muted);
+}
+
+.emptyHint {
+  font-size: var(--fs-xs);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: var(--sp-2) 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 12px var(--sp-5);
+  animation: slideIn 0.2s var(--ease);
+}
+
+.item + .item {
+  border-top: 1px solid var(--gray-200);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.itemText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.itemZone {
+  font-weight: 600;
+}
+
+.itemSeat {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.itemPrice {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.remove {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--gray-700);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  transition:
+    background-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.remove:hover {
+  background: var(--burgundy-soft);
+  color: var(--burgundy);
+  border-color: #e6c9cf;
+}
+
+.footer {
+  padding: var(--sp-4) var(--sp-5) var(--sp-5);
+  background: var(--ivory);
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 600;
+}
+
+.total {
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  font-family: var(--font-display);
+  color: var(--navy-900);
+}
+
+.note,
+.reason {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.reason {
+  color: var(--burgundy);
+  font-weight: 500;
+  text-align: center;
+}
+
+.clear {
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  align-self: center;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+}
+
+/* ---------- Mobile: a bottom sheet ---------- */
+@media (max-width: 960px) {
+  .summary {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 40;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    box-shadow: 0 -10px 30px rgba(20, 36, 58, 0.18);
+    max-height: 85vh;
+  }
+
+  .mobileBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px var(--sp-5);
+    border: none;
+    background: var(--navy-900);
+    color: var(--ivory);
+    font-size: var(--fs-md);
+    text-align: right;
+  }
+
+  .mobileTotal {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .chevron {
+    font-size: 1.2rem;
+  }
+
+  .header,
+  .body {
+    display: none;
+  }
+
+  .expanded .header,
+  .expanded .body {
+    display: flex;
+  }
+
+  .expanded .body {
+    display: block;
+    max-height: 40vh;
+  }
+
+  .footer {
+    padding: var(--sp-3) var(--sp-4) var(--sp-4);
+  }
+
+  .note {
+    display: none;
+  }
+}
+
+/* The button content: label + arrow on one line */
+.cta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}

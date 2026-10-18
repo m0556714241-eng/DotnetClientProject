@@ -1,0 +1,160 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--gold-soft);
+}
+
+.card:hover .image img {
+  transform: scale(1.05);
+}
+
+.past {
+  opacity: 0.78;
+}
+
+.media {
+  position: relative;
+}
+
+.image {
+  aspect-ratio: 16 / 10;
+}
+
+.image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 36, 58, 0.45), transparent 50%);
+  pointer-events: none;
+}
+
+.date {
+  position: absolute;
+  top: var(--sp-3);
+  inset-inline-start: var(--sp-3);
+  background: var(--ivory);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  text-align: center;
+  line-height: 1.05;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 3px solid var(--gold);
+}
+
+.day {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.month {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-5) var(--sp-5);
+  flex: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: var(--sp-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--gray-200);
+}
+
+.price {
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  color: var(--navy-900);
+}
+
+.price small {
+  font-weight: 400;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-inline-end: 4px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+
+.badge {
+  align-self: flex-start;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.badgeLow {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.badgeSold {
+  background: var(--burgundy-soft);
+  color: var(--burgundy);
+}
+
+.badgePast {
+  background: var(--gray-200);
+  color: var(--gray-700);
+}

@@ -1,0 +1,79 @@
+.figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.25));
+}
+
+.stageText {
+  fill: var(--gold-bright);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+}
+
+.picked {
+  animation: glow 2.4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  50% {
+    stroke-width: 4.5;
+  }
+}
+
+.callout {
+  animation: drop 0.6s 0.6s var(--ease) both;
+}
+
+.calloutTitle {
+  fill: var(--navy-900);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.calloutSub {
+  fill: var(--text-muted);
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  font-size: var(--fs-xs);
+  color: rgba(247, 243, 234, 0.75);
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend i {
+  width: 12px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.legend .takenSwatch {
+  background: rgba(247, 243, 234, 0.2);
+}

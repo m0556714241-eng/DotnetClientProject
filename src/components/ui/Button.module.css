@@ -1,0 +1,100 @@
+/* Buttons with "depth": a darker bottom edge (like a real key), pressed = the edge disappears */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    box-shadow 0.15s var(--ease),
+    transform 0.15s var(--ease);
+}
+
+.button svg {
+  flex-shrink: 0;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(2px);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.sm {
+  padding: 9px 14px;
+  font-size: var(--fs-sm);
+}
+.md {
+  padding: 13px 22px;
+  font-size: var(--fs-md);
+}
+.lg {
+  padding: 16px 28px;
+  font-size: var(--fs-lg);
+}
+
+.block {
+  width: 100%;
+}
+
+.primary {
+  background: var(--gold);
+  color: var(--navy-900);
+  font-weight: 700;
+  box-shadow: inset 0 -4px 0 var(--gold-dark);
+}
+.primary:hover:not(:disabled) {
+  background: #c4964a;
+}
+.primary:active:not(:disabled) {
+  box-shadow: inset 0 -1px 0 var(--gold-dark);
+}
+
+.dark {
+  background: var(--navy-900);
+  color: var(--ivory);
+  box-shadow: inset 0 -4px 0 #0b1626;
+}
+.dark:hover:not(:disabled) {
+  background: var(--navy-800);
+}
+.dark:active:not(:disabled) {
+  box-shadow: inset 0 -1px 0 #0b1626;
+}
+
+.secondary {
+  background: var(--white);
+  color: var(--navy-900);
+  border-color: var(--gray-300);
+  box-shadow: inset 0 -3px 0 var(--gray-200);
+}
+.secondary:hover:not(:disabled) {
+  border-color: var(--navy-900);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--navy-800);
+}
+.ghost:hover:not(:disabled) {
+  background: rgba(20, 36, 58, 0.07);
+}
+
+.danger {
+  background: var(--burgundy);
+  color: var(--white);
+  box-shadow: inset 0 -4px 0 #4f2632;
+}
+.danger:hover:not(:disabled) {
+  background: #5d2f3b;
+}
