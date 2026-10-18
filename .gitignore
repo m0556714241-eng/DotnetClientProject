@@ -12,3 +12,6 @@ dist-ssr
 .idea
 .DS_Store
 *.log
+
+# Visual Studio
+.vs/

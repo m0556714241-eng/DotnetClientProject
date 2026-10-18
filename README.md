@@ -2,8 +2,11 @@
 
 הקליינט של SeatWise: גילוי אירועים, **מפת אולם אינטראקטיבית** עם בחירת מושב מדויק, והזמנה מול שרת ה-.NET (`SeatWise.API`).
 
-- **שרת:** https://github.com/m0556714241-eng/SeatWise
-- **אתר חי:** _(יעודכן אחרי ההעלאה ל-Render)_
+- **אתר חי:** https://seatwise-t7uq.onrender.com
+- **השרת (API):** https://seatwise-uh66.onrender.com · Swagger: https://seatwise-uh66.onrender.com/swagger
+- **Repository של השרת:** https://github.com/m0556714241-eng/SeatWise
+
+> השרת החינמי ב-Render "נרדם" אחרי 15 דקות בלי שימוש – הכניסה הראשונה עלולה לקחת כדקה.
 
 ## טכנולוגיות
 
@@ -139,7 +142,7 @@ src/
 - **Publish Directory:** `dist`
 - **Environment:** `VITE_API_URL=https://<שם-השרת>.onrender.com`. המשתנה נקרא **בזמן ה-build**, אז אחרי שינוי צריך לבנות מחדש.
 - **Rewrite:** `/*` → `/index.html` (Rewrite), כדי שרענון בעמוד פנימי כמו `/events/3` לא יחזיר 404.
-- **בשרת:** להוסיף את כתובת הקליינט ל-CORS: `Cors__AllowedOrigins__0=https://<שם-הקליינט>.onrender.com`.
+- **בשרת:** להוסיף את כתובת הקליינט ל-CORS: `Cors__AllowedOrigins__0=https://seatwise-t7uq.onrender.com`.
 
 ## מגבלות ידועות (מה שהשרת לא מספק)
 
